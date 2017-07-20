@@ -1,0 +1,56 @@
+body {
+  margin: auto;
+}
+
+section {
+  background-color: #61b34f;
+  margin: 3vw auto;
+  height: 55vw;
+  width: 40vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div {
+  width: 10vw;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+button {
+  border: .1vw solid white;
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: #61b34f;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: 3vw;
+}
+
+#results {
+  width: 29.8vw;
+  border: .1vw solid white;
+  color: white;
+  font-weight: 200;
+  font-size: 3vw;
+  text-align: right;
+  align-content: stretch;
+}
+
+.lighter {
+  background-color: #82c276;
+  color: #4f7a47;
+}
+
+.lighter:hover {
+  color: white;
+}
+
+.hover:hover {
+  background-color: #82c276;
+}
+
+/*.border {
+  border: 1px solid black;
+}*/
