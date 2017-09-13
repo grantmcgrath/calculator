@@ -1,28 +1,27 @@
-var results = document.querySelector("#results");
-var buttons = document.querySelectorAll(".digit");
-// console.log(buttons);
+let result = document.querySelector("#result");
+let onScreen = "";
+let period = false;
 
-var values = [];
+function clearButton(){
+  result.value = "";
+  period = false;
+  onScreen = "";
+}
 
-// Takes the input of each key other then equal or clear and adds it to the array
-for (i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function() {
-    results.innerHTML += event.target.value;
-    values.push(event.target.value);
-    console.log(values);
-  })
-};
+function displayVal(inputNum){
+  if((!isNaN(inputNum) || (inputNum == "." && period == false)) || (onScreen.length > 0 && !isNaN(onScreen.substr(onScreen.length-1)))){
 
-// When the equal key is selected, this takes the array and does the equation and returns the result
-var equal = document.querySelector("#equal");
-equal.addEventListener("click", function() {
-  console.log(eval(values.join(" ")));
-  results.innerHTML=(eval(values.join(" ")));
-});
+    if (inputNum != "." || ((inputNum == ".") && !period)){
+      onScreen = onScreen + inputNum;
+      result.value = onScreen;
+    }
+  }
+}
 
-// Clears the results by clearing the values array
-var clear = document.querySelector("#clear");
-clear.addEventListener("click", function() {
-  values = [];
-  results.innerHTML = " ";
-});
+function totalVal(){
+  if (onScreen != ""){
+    var total = eval(onScreen);
+    onScreen = total.toString();
+    result.value = total;
+  }
+}
